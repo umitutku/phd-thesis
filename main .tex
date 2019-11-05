@@ -1,0 +1,65 @@
+%% For short draft builds (breaks citations by necessity)
+%\documentclass[hyperpdf,nobind,draft,hidefrontback]{hepthesis}
+
+%%For Cambridge soft-bound version
+\documentclass[hyperpdf,bindnopdf]{hepthesis}
+
+%% For Cambridge hard-bound version (must be one-sided)
+%\documentclass[hyperpdf,oneside]{hepthesis}
+
+%%-----Load packages
+\input{load_packages.tex}
+
+%%-----Global line spacing
+%\setallspacing{double}
+
+%%-----Section wide line spacing
+%\setfrontmatterspacing{double}
+
+%%-----Thesis title and author
+\title{LUX-ZEPLIN: The Background Story}
+\date{\today}
+\author{\textbf{Umit Utku}}
+
+%%-----PDF meta-data
+\makeatletter
+\@ifpackageloaded{hyperref}{%
+\hypersetup{%
+  pdftitle = {Backgrounds in LZ},
+  pdfsubject = {Umit Utku's PhD thesis},
+  pdfkeywords = {Physics, Dark Mater, Direct Detection, LZ, LUX-ZEPLIN},
+  pdfauthor = {\textcopyright\ Umit Utku}
+}}{}
+\makeatother
+
+%%-----Start document
+\begin{document}
+
+%%-----Title page, Abstract, Declaration, Acknowledgements
+\begin{frontmatter}
+  \input{Frontmatter/frontmatter.tex}
+\end{frontmatter}
+
+%% Start the content body of the thesis
+\begin{mainmatter}
+  %% Chapters
+  \input{Overview/overview.tex}
+  \input{Chapter_1/chap1.tex}
+  \input{Chapter_2/chap2.tex}
+  \input{Chapter_3/chap3.tex}
+  %% To ignore a specific chapter while working on another, making the build faster, comment it out:
+  %\input{chap4}
+\end{mainmatter}
+
+%% Produce the appendices
+\begin{appendices}
+  \input{Backmatter/appendices.tex}
+\end{appendices}
+
+%% Produce bibliography
+\begin{backmatter}
+  \input{Backmatter/backmatter.tex}
+\end{backmatter}
+
+%% Close
+\end{document}
