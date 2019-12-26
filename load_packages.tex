@@ -7,7 +7,21 @@
 \usepackage{cite}
 \usepackage[acronym]{glossaries}
 \usepackage{Style/abmath}
+\usepackage[colorlinks=true,
+            citecolor=red]{hyperref}
 
+%$$ Section Spacing
+\usepackage{titlesec}
+    \setcounter{secnumdepth}{5} % Note that part is -1 level !
+    \setcounter{tocdepth}{5}
+    \titlespacing{\section}{0pt}{2ex}{1ex}
+    \titlespacing{\subsection}{0pt}{1ex}{0ex}
+    \titlespacing{\subsubsection}{0pt}{0.5ex}{0ex}
+\setlength{\parindent}{0cm}
+
+\usepackage{caption}
+\captionsetup{format=plain}
+    
 %% Using Babel allows other languages to be used and mixed-in easily
 %\usepackage[ngerman,english]{babel}
 
@@ -26,6 +40,7 @@
 \DeclareRobustCommand{\RateOf}[1]{\mymath{\Gamma}\parenths{#1}\xspace}
 
 %% High-energy physics stuff
+\usepackage{physics}
 \usepackage{Style/abhep}
 \usepackage{hepnames}
 \usepackage{hepunits}

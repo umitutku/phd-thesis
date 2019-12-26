@@ -553,6 +553,34 @@ new.block
 note output
 fin.entry
 }
+FUNCTION {textbook}
+{ output.bibitem
+collaboration output
+format.authors "author" output.check
+format.title output
+new.block
+crossref missing$
+{ journal field.or.null
+format.vol.num.pages 
+format.date empty$
+'skip$
+{ duplicate$ empty$
+{ pop$ format.date paren }
+{ " " * format.date paren * }
+if$
+}
+if$
+output
+}
+{ format.article.crossref output.nonnull
+format.pages output
+}
+if$
+eprint output
+new.block
+note output
+fin.entry
+}
 FUNCTION {book}
 { output.bibitem
 collaboration output
