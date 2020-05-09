@@ -1,3 +1,4 @@
+%$$ Document packages
 \usepackage{xspace}
 \usepackage{tikz}
 \usepackage{morefloats,subfig,afterpage}
@@ -7,8 +8,11 @@
 \usepackage{cite}
 \usepackage[acronym]{glossaries}
 \usepackage{Style/abmath}
+\usepackage{url}
 \usepackage[colorlinks=true,
-            citecolor=red]{hyperref}
+            citecolor=red, urlcolor=red]{hyperref}
+\usepackage{multirow}
+\usepackage{adjustbox}
 
 %$$ Section Spacing
 \usepackage{titlesec}
@@ -19,8 +23,13 @@
     \titlespacing{\subsubsection}{0pt}{0.5ex}{0ex}
 \setlength{\parindent}{0cm}
 
+%$$ Additional Packages
 \usepackage{caption}
 \captionsetup{format=plain}
+% Dashed Lines
+\usepackage{arydshln}
+
+
     
 %% Using Babel allows other languages to be used and mixed-in easily
 %\usepackage[ngerman,english]{babel}
@@ -38,6 +47,7 @@
 \DeclareRobustCommand{\mymath}[1]{\ensuremath{\maybebmsf{#1}}}
 \DeclareRobustCommand{\Rate}{\mymath{\Gamma}\xspace}
 \DeclareRobustCommand{\RateOf}[1]{\mymath{\Gamma}\parenths{#1}\xspace}
+
 
 %% High-energy physics stuff
 \usepackage{physics}

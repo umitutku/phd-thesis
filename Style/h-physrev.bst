@@ -395,6 +395,7 @@ year empty$
 if$
 paren " " swap$ *
 }
+
 FUNCTION {format.book.entry}
 { format.btitle
 format.bvolume *
@@ -402,11 +403,13 @@ format.number.series *
 format.edition *
 format.pub.addr.date *
 }
+
 FUNCTION {format.inbook.entry}
 { format.book.entry
 ", " *
 format.chapter.pages *
 }
+
 FUNCTION {format.in.ed.booktitle}
 { booktitle empty$
 { "" }
@@ -417,6 +420,7 @@ if$
 }
 if$
 }
+
 FUNCTION {empty.misc.check}
 { author empty$ title empty$ howpublished empty$
 month empty$ year empty$ note empty$
@@ -425,6 +429,7 @@ and and and and and
 'skip$
 if$
 }
+
 FUNCTION {format.thesis.type}
 { type empty$
 'skip$
@@ -433,6 +438,7 @@ type "t" change.case$
 }
 if$
 }
+
 FUNCTION {format.inst.tr.num.date}
 { institution empty$
 { "" "empty institution in " cite$ * warning$ }
@@ -448,6 +454,7 @@ year empty$
 { ", " * year * " (unpublished)" * }
 if$
 }
+
 FUNCTION {format.article.crossref}
 { key empty$
 { journal empty$
@@ -526,33 +533,35 @@ if$
 if$
 " \cite{" * crossref * "}" *
 }
+
 FUNCTION {article}
 { output.bibitem
-collaboration output
-format.authors "author" output.check
-new.block
-crossref missing$
-{ journal field.or.null
-format.vol.num.pages 
-format.date empty$
-'skip$
-{ duplicate$ empty$
-{ pop$ format.date paren }
-{ " " * format.date paren * }
-if$
+    collaboration output
+    format.authors "author" output.check
+    new.block
+    crossref missing$
+    { journal field.or.null
+        format.vol.num.pages 
+        format.date empty$
+        'skip$
+        { duplicate$ empty$
+            { pop$ format.date paren }
+            { " " * format.date paren * }
+            if$
+        }
+        if$
+        output
+    }
+    { format.article.crossref output.nonnull
+        format.pages output
+    }
+    if$
+    eprint output
+    new.block
+    note output
+    fin.entry
 }
-if$
-output
-}
-{ format.article.crossref output.nonnull
-format.pages output
-}
-if$
-eprint output
-new.block
-note output
-fin.entry
-}
+
 FUNCTION {textbook}
 { output.bibitem
 collaboration output
@@ -581,6 +590,7 @@ new.block
 note output
 fin.entry
 }
+
 FUNCTION {book}
 { output.bibitem
 collaboration output
@@ -605,6 +615,7 @@ new.block
 note output
 fin.entry
 }
+
 FUNCTION {booklet}
 { output.bibitem
 collaboration output
@@ -620,6 +631,7 @@ new.block
 note output
 fin.entry
 }
+
 FUNCTION {inbook}
 { output.bibitem
 collaboration output
@@ -645,6 +657,7 @@ new.block
 note output
 fin.entry
 }
+
 FUNCTION {incollection}
 { output.bibitem
 collaboration output
@@ -672,6 +685,7 @@ new.block
 note output
 fin.entry
 }
+
 FUNCTION {inproceedings}
 { output.bibitem
 collaboration output
@@ -743,6 +757,7 @@ new.block
 note output
 fin.entry
 }
+
 FUNCTION {mastersthesis}
 { output.bibitem
 format.authors "author" output.check
@@ -758,6 +773,7 @@ new.block
 note output
 fin.entry
 }
+
 FUNCTION {misc}
 { output.bibitem
 collaboration output
@@ -773,6 +789,7 @@ note output
 fin.entry
 empty.misc.check
 }
+
 FUNCTION {phdthesis}
 { output.bibitem
 format.authors "author" output.check
@@ -788,6 +805,7 @@ new.block
 note output
 fin.entry
 }
+
 FUNCTION {proceedings}
 { output.bibitem
 collaboration output
@@ -824,6 +842,7 @@ new.block
 note output
 fin.entry
 }
+
 FUNCTION {techreport}
 { output.bibitem
 collaboration output
@@ -835,6 +854,7 @@ new.block
 note output
 fin.entry
 }
+
 FUNCTION {unpublished}
 { output.bibitem
 collaboration output
@@ -846,6 +866,7 @@ note "note" output.check
 format.date output
 fin.entry
 }
+
 FUNCTION {default.type} { misc }
 MACRO {jan} {"Jan."}
 MACRO {feb} {"Feb."}
