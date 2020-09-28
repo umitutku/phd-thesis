@@ -151,6 +151,12 @@ FUNCTION {embolden}
 { "{\textbf " swap$ * "}" * }
 if$
 }
+FUNCTION {boldface}
+{ duplicate$ empty$
+    { pop$ "" }
+    { "{\bf " swap$ * "}" * }
+  if$
+}
 FUNCTION {paren}
 { duplicate$ empty$
 { pop$ "" }
@@ -211,18 +217,21 @@ if$
 }
 if$
 }
+
 FUNCTION {format.edited}
 { editor empty$
 { "" }
 { "edited by " editor format.names * }
 if$
 }
+
 FUNCTION {format.title}
 { title empty$
-{ "" }
-{ title "t" change.case$ }
-if$
+    { "" }
+    { title emphasize "t" change.case$ }  
+  if$
 }
+
 FUNCTION {n.dashify}
 { 't :=
 ""
@@ -256,12 +265,14 @@ t #2 global.max$ substring$ 't :=
 }
 while$
 }
+
 FUNCTION {format.date}
 { year empty$
 { "" }
 'year
 if$
 }
+
 FUNCTION {format.btitle}
 { title emphasize
 }
@@ -278,18 +289,20 @@ FUNCTION {either.or.check}
 { "can't use both " swap$ * " fields in " * cite$ * warning$ }
 if$
 }
+
 FUNCTION {format.bvolume}
 { volume empty$
-{ "" }
-{ series empty$
-'skip$
-{ ", " series * }
-if$
-" Vol." volume tie.or.space.connect *
-"volume and number" number either.or.check
+    { "" }
+    { series empty$
+    'skip$
+    { ", " series * }
+    if$
+    " Vol." volume tie.or.space.connect *
+    "volume and number" number either.or.check
+    }
+    if$
 }
-if$
-}
+
 FUNCTION {format.number.series}
 { volume empty$
 { number empty$
@@ -353,17 +366,19 @@ FUNCTION {format.pages.a}
 if$
 }
 FUNCTION {format.vol.num.pages}
-{ volume field.or.null embolden
-" " swap$ * *
-pages empty$
-'skip$
-{ duplicate$ empty$
-{ pop$ format.pages.a }
-{ ", " * pages first.page * }
-if$
+{ volume boldface
+    " " swap$ * *
+    pages empty$
+    'skip$
+    { duplicate$ empty$
+    { pop$ format.pages.a }
+    { ", " * pages first.page * }
+    if$
+    }
+    if$
 }
-if$
-}
+
+
 FUNCTION {format.chapter.pages}
 { chapter empty$
 'format.pages
@@ -539,6 +554,8 @@ FUNCTION {article}
     collaboration output
     format.authors "author" output.check
     new.block
+    format.title "title" output.check
+    new.block
     crossref missing$
     { journal field.or.null
         format.vol.num.pages 
@@ -564,56 +581,56 @@ FUNCTION {article}
 
 FUNCTION {textbook}
 { output.bibitem
-collaboration output
-format.authors "author" output.check
-format.title output
-new.block
-crossref missing$
-{ journal field.or.null
-format.vol.num.pages 
-format.date empty$
-'skip$
-{ duplicate$ empty$
-{ pop$ format.date paren }
-{ " " * format.date paren * }
-if$
-}
-if$
-output
-}
-{ format.article.crossref output.nonnull
-format.pages output
-}
-if$
-eprint output
-new.block
-note output
-fin.entry
+    collaboration output
+    format.authors "author" output.check
+    format.title output
+    new.block
+    crossref missing$
+    { journal field.or.null
+    format.vol.num.pages 
+    format.date empty$
+    'skip$
+    { duplicate$ empty$
+    { pop$ format.date paren }
+    { " " * format.date paren * }
+    if$
+    }
+    if$
+    output
+    }
+    { format.article.crossref output.nonnull
+    format.pages output
+    }
+    if$
+    eprint output
+    new.block
+    note output
+    fin.entry
 }
 
 FUNCTION {book}
-{ output.bibitem
-collaboration output
-author empty$
-{ format.editors "author and editor" output.check }
-{ format.authors output.nonnull
-crossref missing$
-{ "author and editor" editor either.or.check }
-'skip$
-if$
-}
-if$
-new.block
-crossref missing$
-{ format.book.entry output }
-{ new.block
-format.book.crossref output.nonnull
-}
-if$    
-eprint output
-new.block
-note output
-fin.entry
+    { output.bibitem
+    collaboration output
+    author empty$
+    { format.editors "author and editor" output.check }
+    { format.authors output.nonnull
+    crossref missing$
+    { "author and editor" editor either.or.check }
+    'skip$
+    if$
+    }
+    if$
+    new.block
+    crossref missing$
+    { format.book.entry output }
+    { new.block
+    format.book.crossref output.nonnull
+    }
+    if$    
+    eprint output
+    new.block
+    note output
+    fin.entry
 }
 
 FUNCTION {booklet}

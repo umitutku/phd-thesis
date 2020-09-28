@@ -4,6 +4,7 @@
 %%For Cambridge soft-bound version
 \documentclass[hyperpdf,bindnopdf]{hepthesis}
 \usepackage{notoccite}
+\usepackage{hyperref}
 
 %% For Cambridge hard-bound version (must be one-sided)
 %\documentclass[hyperpdf,oneside]{hepthesis}
@@ -51,15 +52,9 @@
   \input{Chapter_3/chap3.tex}
   \input{Chapter_4/chap4.tex}
   \input{Chapter_5/chap5.tex}  
-  \input{Chapter_6/chap6.tex}    
-  %% To ignore a specific chapter while working on another, making the build faster, comment it out:
-  %\input{chap4}
+  \input{Chapter_6/chap6.tex}   
+  \input{Chapter_7/chap7.tex}
 \end{mainmatter}
-
-%% Produce the appendices
-\begin{appendices}
-  \input{Backmatter/appendices.tex}
-\end{appendices}
 
 %% Produce bibliography
 \begin{backmatter}
