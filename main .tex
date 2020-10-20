@@ -4,7 +4,6 @@
 %%For Cambridge soft-bound version
 \documentclass[hyperpdf,bindnopdf]{hepthesis}
 \usepackage{notoccite}
-\usepackage{hyperref}
 
 %% For Cambridge hard-bound version (must be one-sided)
 %\documentclass[hyperpdf,oneside]{hepthesis}
@@ -20,9 +19,6 @@
 %\setfrontmatterspacing{double}
 
 %%-----Thesis title and author
-\title{LUX-ZEPLIN: The Background Story}
-\date{\today}
-\author{\textbf{Umit Utku}}
 
 %%-----PDF meta-data
 \makeatletter
@@ -43,9 +39,9 @@
   \input{Frontmatter/frontmatter.tex}
 \end{frontmatter}
 
-%% Start the content body of the thesis
+%%-----Start the content body of the thesis
 \begin{mainmatter}
-  %% Chapters
+  %%-----Chapters
   \input{Overview/overview.tex}
   \input{Chapter_1/chap1.tex}
   \input{Chapter_2/chap2.tex}
@@ -54,12 +50,13 @@
   \input{Chapter_5/chap5.tex}  
   \input{Chapter_6/chap6.tex}   
   \input{Chapter_7/chap7.tex}
+  \input{Conclusion/conclusion.tex}
 \end{mainmatter}
 
-%% Produce bibliography
+%%-----Produce bibliography
 \begin{backmatter}
   \input{Backmatter/backmatter.tex}
 \end{backmatter}
 
-%% Close
+%%-----Close
 \end{document}
