@@ -1,51 +1,52 @@
 \begin{table}[h]
 \centering
-\caption{Overview of the radioactive nuclide sources planned for LZ calibration, highlighting the type of interaction, energy deposition range, half-life of the isotopes and their intended purpose. The partitioned sections represent different deployment techniques. 1$^{st}$: Internal gaseous sources. 2$^{nd}$: Sealed sources lowered down small-diameter conduits to cryostat side vacuum, 3$^{rd}$: \gammaN{} sources that are deployed as indicated in (2), but require dense shielding. 4$^{th}$: DD generator sources, in which neutrons travel through conduits from the generator.}
+\caption
+[Overview of the radioactive nuclide sources planned for LZ calibration, highlighting the type of interaction, energy deposition range, half-life of the isotopes and their intended purpose.]
+{Overview of the radioactive nuclide sources planned for LZ calibration, highlighting the type of interaction, energy deposition range, half-life of the isotopes and their intended purpose. The partitioned sections represent different deployment techniques. 1$^{st}$: Internal gaseous sources. 2$^{nd}$: Sealed sources lowered down small-diameter conduits to cryostat side vacuum, 3$^{rd}$: \gammaN{} sources that are deployed as indicated in (2), but require dense shielding. 4$^{th}$: DD generator sources, in which neutrons travel through conduits from the generator.}
 \label{tab:calibration_sources}
 \vspace{1mm}
 \renewcommand{\arraystretch}{1.2}
-\begin{tabular}{lllll}
-\toprule
-
-\textbf{Isotope} & %1
-\textbf{Type} & %2
-\textbf{Energy [keV]} & %3
-\textbf{$\tau_{1/2}$} & %4
-\textbf{Purpose} & %5
-\hline
-\hline
-
-\HT{}	 & \beta{}       & 18.6 endpoint    & 12.5 y            & ER band \\ 
-\COF{}	 & \beta{}       & 156 endpoint     & 5730 y            & ER band \\ 
-\KrETm	 & \gamma{}      & 9.4, 32.1        & 1.83 h            & TPC ($x,y,z$) \\ 
-\XeOTOm	 & \gamma{}      & 164              & 11.8 d            & TPC ($x,y,z$), Xe skin \\ 
-\RnTTZ{} & \alpha{}, \beta{},  \gamma{} & various   & 10.6 h    & Xe skin \\ 
-
-\hline
-
-\NaTT{}	 & \gamma{}       & 511, 1275       & 2.61 y      & TPC and OD sync \\ 
-\MnFF{}	 & \gamma{}       & 835             & 312 d       & High-energy ER response \\ 
-\CoFS{}	 & \gamma{}       & 122             & 0.74 y      & Xe skin \\ 
-\CoSZ{}	 & \gamma{}       & 1173 , 1333     & 5.27 y      & High-energy ER response \\ 
-\BaOTT{} & \gamma{}       & 356             & 10.5 y      & ER response \\ 
-\ThTTE{} & \gamma{}       & 2615            & 1.91 y      & High-energy ER response \\ 
-\AmLi{}	 & \alphaN{}      & 1500 endpoint   & 432 y       & NR band \\ 
-\AmBe{}	 & \alphaN{}      & 11,000 endpoint & 432 y       & NR band \\ 
-\CfTFT{} & \neutron       & Watt spectrum   & 2.65 y      & NR efficiency \\ 
-
-\hline
-
-\YBe{}	    & \gammaN{}     & 152       & 107 d     & NR response \\ 
-\SbBe{}	    & \gammaN{}     & 22.5      & 60.2 d    & NR response \\ 
-\BiBeTZF{}	& \gammaN{}     & 88.5      & 15.3 d    & NR response \\ 
-\BiBeTZS{}	& \gammaN{}     & 47        & 6.24 d    & NR response \\ 
-
-\hline
-
-\DD{}	& \neutron{}        & 272 \xrightarrow{} 400        & ---     & NR light and charge yields \\ 
-\DD{}	& \neutron{}        & 2450                          & ---     & NR light and charge yields \\ 
-
-\bottomrule
-\end{tabular}
+    \begin{tabularx}{1.0\linewidth}{@{\extracolsep{\fill}}lllll}
+    \toprule
+    
+    \textbf{Isotope} & %1
+    \textbf{Type} & %2
+    \textbf{Energy [keV]} & %3
+    \textbf{$\tau_{1/2}$} & %4
+    \textbf{Purpose} & %5
+    \hline
+    \hline
+    
+    \HT{}	 & \beta{}       & 18.6 endpoint    & 12.5 y            & ER band \\ 
+    \COF{}	 & \beta{}       & 156 endpoint     & 5730 y            & ER band \\ 
+    \KrETm	 & \gamma{}      & 9.4, 32.1        & 1.83 h            & TPC ($x,y,z$) \\ 
+    \XeOTOm	 & \gamma{}      & 164              & 11.8 d            & TPC ($x,y,z$), Xe skin \\ 
+    \RnTTZ{} & \alpha{}, \beta{},  \gamma{} & various   & 10.6 h    & Xe skin \\ 
+    
+    \hline
+    
+    \NaTT{}	 & \gamma{}       & 511, 1275       & 2.61 y      & TPC and OD sync \\ 
+    \MnFF{}	 & \gamma{}       & 835             & 312 d       & High-energy ER response \\ 
+    \CoFS{}	 & \gamma{}       & 122             & 0.74 y      & Xe skin \\ 
+    \CoSZ{}	 & \gamma{}       & 1173 , 1333     & 5.27 y      & High-energy ER response \\ 
+    \BaOTT{} & \gamma{}       & 356             & 10.5 y      & ER response \\ 
+    \ThTTE{} & \gamma{}       & 2615            & 1.91 y      & High-energy ER response \\ 
+    \AmLi{}	 & \alphaN{}      & 1500 endpoint   & 432 y       & NR band \\ 
+    \AmBe{}	 & \alphaN{}      & 11,000 endpoint & 432 y       & NR band \\ 
+    \CfTFT{} & \neutron       & Watt spectrum   & 2.65 y      & NR efficiency \\ 
+    
+    \hline
+    
+    \YBe{}	    & \gammaN{}     & 152       & 107 d     & NR response \\ 
+    \SbBe{}	    & \gammaN{}     & 22.5      & 60.2 d    & NR response \\ 
+    \BiBeTZF{}	& \gammaN{}     & 88.5      & 15.3 d    & NR response \\ 
+    \BiBeTZS{}	& \gammaN{}     & 47        & 6.24 d    & NR response \\ 
+    
+    \hline
+    
+    \DD{}	& \neutron{}        & 272 \xrightarrow{} 400        & ---     & NR light and charge yields \\ 
+    \DD{}	& \neutron{}        & 2450                          & ---     & NR light and charge yields \\
+    
+    \bottomrule
+    \end{tabularx}
 \end{table}
-

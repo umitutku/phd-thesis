@@ -2,7 +2,7 @@
 %\documentclass[hyperpdf,nobind,draft,hidefrontback]{hepthesis}
 
 %%For Cambridge soft-bound version
-\documentclass[hyperpdf,bindnopdf]{hepthesis}
+\documentclass[hyperpdf,bindnopdf]{hepthesis_mod}
 \usepackage{notoccite}
 
 %% For Cambridge hard-bound version (must be one-sided)
@@ -33,7 +33,6 @@
 
 %%-----Start document
 \begin{document}
-
 %%-----Title page, Abstract, Declaration, Acknowledgements
 \begin{frontmatter}
   \input{Frontmatter/frontmatter.tex}
@@ -42,7 +41,6 @@
 %%-----Start the content body of the thesis
 \begin{mainmatter}
   %%-----Chapters
-  \input{Overview/overview.tex}
   \input{Chapter_1/chap1.tex}
   \input{Chapter_2/chap2.tex}
   \input{Chapter_3/chap3.tex}

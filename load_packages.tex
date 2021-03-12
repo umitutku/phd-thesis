@@ -10,7 +10,7 @@
 \usepackage{Style/abmath}
 \usepackage{url}
 \usepackage[colorlinks=true,
-            citecolor=red, urlcolor=red]{hyperref}
+            citecolor=red, urlcolor=red, linktocpage]{hyperref}
 \usepackage{multirow}
 \usepackage{adjustbox}
 
@@ -34,15 +34,14 @@
 \usepackage{bm}
 \renewcommand{\labelitemi}{$\blacktriangleright$}
 
+\usepackage{etoolbox}
+
+
 %% Using Babel allows other languages to be used and mixed-in easily
 %\usepackage[ngerman,english]{babel}
 
 \selectlanguage{english}
 
-%% Citation system tweaks
-
-% \let\@OldCite\cite
-% \renewcommand{\cite}[1]{\mbox{\!\!\!\@OldCite{#1}}}
 
 %% Maths
 % TODO: rework or eliminate maybemath
